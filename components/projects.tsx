@@ -3,7 +3,7 @@
 
 const ProjectsSection = () => {
   return (
-    <div id="projects" className="h-100">
+    <div id="projects" className="h-100 bg-[hsl(218,27%,14%)]">
       ProjectsSection
     </div>
   );

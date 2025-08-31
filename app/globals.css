@@ -79,7 +79,7 @@
 }
 
 .dark {
-  --background: oklch(0.09 0.03 160); /* 深绿黑 */
+  --background: oklch(0.2472 0.0256 261.2); /* 深蓝黑 */
   --foreground: oklch(0.93 0.01 140); /* 薄荷白 */
   --card: oklch(0.208 0.042 265.755);
   --card-foreground: oklch(0.984 0.003 247.858);
@@ -127,5 +127,80 @@
   /* 调整滚动时的偏移量，避免被固定的 header 遮挡 */
   section {
     scroll-margin-top: 80px;
+  }
+}
+
+// ... existing code ...
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* 调整滚动时的偏移量，避免被固定的 header 遮挡 */
+  section {
+    scroll-margin-top: 80px;
+  }
+
+  /* 自定义动画 */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  /* 技能标签动画 */
+  .skill-tag {
+    animation: fade-in 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .skill-tag:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .skill-tag:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .skill-tag:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .skill-tag:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  .skill-tag:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  .skill-tag:nth-child(6) {
+    animation-delay: 0.6s;
   }
 }
