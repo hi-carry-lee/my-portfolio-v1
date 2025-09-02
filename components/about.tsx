@@ -1,20 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import {
-  Calendar,
-  MapPin,
-  Mail,
-  Phone,
-  Download,
-  Award,
-  Code,
-  Users,
-  Lightbulb,
-  Target,
-} from "lucide-react";
 
-const AboutSection = () => {
+const About = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -35,72 +22,10 @@ const AboutSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const skills = [
-    {
-      name: "Frontend",
-      items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "jQuery"],
-    },
-    {
-      name: "Backend",
-      items: ["Node.js", "Nest.js", "Java", "Spring Boot"],
-    },
-    {
-      name: "Database",
-      items: ["PostgreSQL", "MySQL", "Redis", "MongoDB"],
-    },
-    { name: "DevOps", items: ["Docker", "AWS", "CI/CD", "Git"] },
-  ];
-
-  const experiences = [
-    {
-      year: "2023 - 现在",
-      title: "高级全栈开发工程师",
-      company: "TechCorp Inc.",
-      description: "负责企业级应用的前后端开发，带领5人团队完成多个重要项目。",
-    },
-    {
-      year: "2021 - 2023",
-      title: "全栈开发工程师",
-      company: "StartupXYZ",
-      description:
-        "参与产品从0到1的完整开发流程，负责核心功能模块的设计与实现。",
-    },
-    {
-      year: "2019 - 2021",
-      title: "前端开发工程师",
-      company: "WebDev Studio",
-      description: "专注于用户界面开发和用户体验优化，参与多个商业网站项目。",
-    },
-  ];
-
-  const achievements = [
-    {
-      icon: Award,
-      title: "技术能力",
-      description:
-        "熟练掌握React、TypeScript等现代前端技术栈，具备全栈开发能力",
-    },
-    {
-      icon: Users,
-      title: "项目经验",
-      description: "参与多个商业项目开发，从需求分析到部署上线全流程参与",
-    },
-    {
-      icon: Lightbulb,
-      title: "问题解决",
-      description: "善于分析技术难题，能够独立解决复杂的前后端技术问题",
-    },
-    {
-      icon: Target,
-      title: "持续学习",
-      description: "保持技术敏感度，持续学习新技术，提升开发效率",
-    },
-  ];
-
   return (
     <section
       id="about"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden py-20"
+      className="relative min-h-screen flex items-start justify-center overflow-hidden pt-20 pb-16"
     >
       {/* 背景装饰 */}
       <div className="absolute inset-0 -z-10">
@@ -110,7 +35,7 @@ const AboutSection = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-16">
+        <div className="space-y-12 pt-2">
           {/* 标题部分 */}
           <div
             className={`text-center space-y-4 transition-all duration-1000 ${
@@ -130,156 +55,89 @@ const AboutSection = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* 左侧：个人介绍和技能 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* The Switch */}
             <div
-              className={`space-y-8 transition-all duration-1000 delay-200 ${
+              className={`grid grid-rows-[auto_1fr] h-full transition-all duration-1000 delay-200 ${
                 isVisible
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 -translate-x-10"
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
               }`}
             >
-              {/* 个人介绍 */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-foreground">
-                  Introduction
-                </h3>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    Hi there! I'm a full-stack developer with 6 years of
-                    experience who genuinely loves turning ideas into reality
-                    through code.
-                  </p>
-                  <p>
-                    I've been working with Java backends throughout my career
-                    and recently fell in love with the modern TypeScript stack
-                    (Next.js + Nest.js) for full-stack development.
-                  </p>
-                  <p>
-                    I have a thing for clean, maintainable code that actually
-                    makes sense. I love exploring new technologies and
-                    leveraging them to enhance my development productivity.
-                  </p>
-                </div>
-              </div>
-
-              {/* 技能分类 */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-foreground">
-                  Skills
-                </h3>
-                <div className="space-y-4">
-                  {skills.map((category, categoryIndex) => (
-                    <div key={category.name} className="space-y-3">
-                      <h4 className="text-lg font-medium text-chart-2">
-                        {category.name}
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {category.items.map((skill, skillIndex) => (
-                          <span
-                            key={skill}
-                            className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm font-medium border transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-105"
-                            style={{
-                              animationDelay: `${
-                                categoryIndex * 100 + skillIndex * 50
-                              }ms`,
-                              opacity: isVisible ? 1 : 0,
-                              transform: isVisible
-                                ? "translateY(0)"
-                                : "translateY(20px)",
-                            }}
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+              <h3 className="text-2xl font-semibold text-foreground mb-4">
+                The Switch
+              </h3>
+              <div className="p-6 bg-card border rounded-lg hover:shadow-lg transition-all duration-300">
+                <p className="text-muted-foreground leading-relaxed">
+                  After graduating with a Vehicle Engineering degree, I spent
+                  just one year as an automotive engineer before transitioning
+                  to sales. During those sales years, I read extensively and was
+                  particularly struck by the idea that "computer science and
+                  English are the two essential skills for the modern world" –
+                  that's when I decided to make the leap into programming in
+                  2019.
+                </p>
               </div>
             </div>
 
-            {/* 右侧：经验时间线和成就 */}
+            {/* Why I Love Code */}
             <div
-              className={`space-y-8 transition-all duration-1000 delay-400 ${
+              className={`grid grid-rows-[auto_1fr] h-full transition-all duration-1000 delay-400 ${
                 isVisible
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 translate-x-10"
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
               }`}
             >
-              {/* 工作经历 */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-foreground">
-                  工作经历
-                </h3>
-                <div className="space-y-6">
-                  {experiences.map((exp, index) => (
-                    <div
-                      key={index}
-                      className="relative pl-8 border-l-2 border-chart-2/30 hover:border-chart-2 transition-colors duration-300"
-                      style={{
-                        opacity: isVisible ? 1 : 0,
-                        transform: isVisible
-                          ? "translateX(0)"
-                          : "translateX(20px)",
-                        transitionDelay: `${600 + index * 200}ms`,
-                      }}
-                    >
-                      <div className="absolute -left-2.5 top-0 w-5 h-5 bg-chart-2 rounded-full border-4 border-background" />
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4 text-chart-2" />
-                          <span className="text-sm font-medium text-chart-2">
-                            {exp.year}
-                          </span>
-                        </div>
-                        <h4 className="text-lg font-semibold text-foreground">
-                          {exp.title}
-                        </h4>
-                        <p className="text-chart-1 font-medium">
-                          {exp.company}
-                        </p>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          {exp.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+              <h3 className="text-2xl font-semibold text-foreground mb-4">
+                Why I Love Code
+              </h3>
+              <div className="p-6 bg-card border rounded-lg hover:shadow-lg transition-all duration-300">
+                <p className="text-muted-foreground leading-relaxed">
+                  There's something deeply satisfying about the logical
+                  consistency of programming – when something works, it works,
+                  and when it doesn't, there's always a clear reason why.
+                </p>
               </div>
+            </div>
 
-              {/* 工作亮点 */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-foreground">
-                  工作亮点
-                </h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {achievements.map((achievement, index) => (
-                    <div
-                      key={index}
-                      className="p-4 bg-card border rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 group"
-                      style={{
-                        opacity: isVisible ? 1 : 0,
-                        transform: isVisible
-                          ? "translateY(0)"
-                          : "translateY(20px)",
-                        transitionDelay: `${800 + index * 100}ms`,
-                      }}
-                    >
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="p-2 bg-chart-2/20 rounded-lg group-hover:bg-chart-2 transition-colors duration-300">
-                          <achievement.icon className="h-5 w-5 text-chart-2" />
-                        </div>
-                        <h4 className="font-semibold text-foreground">
-                          {achievement.title}
-                        </h4>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        {achievement.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+            {/* Community Spirit */}
+            <div
+              className={`grid grid-rows-[auto_1fr] h-full transition-all duration-1000 delay-600 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
+              <h3 className="text-2xl font-semibold text-foreground mb-4">
+                Community Spirit
+              </h3>
+              <div className="p-6 bg-card border rounded-lg hover:shadow-lg transition-all duration-300">
+                <p className="text-muted-foreground leading-relaxed">
+                  What amazes me most is how the open-source world lets regular
+                  developers like me build on the work of brilliant minds who
+                  share their tools freely.
+                </p>
+              </div>
+            </div>
+
+            {/* Looking Ahead */}
+            <div
+              className={`grid grid-rows-[auto_1fr] h-full transition-all duration-1000 delay-800 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
+              <h3 className="text-2xl font-semibold text-foreground mb-4">
+                Looking Ahead
+              </h3>
+              <div className="p-6 bg-card border rounded-lg hover:shadow-lg transition-all duration-300">
+                <p className="text-muted-foreground leading-relaxed">
+                  With AI reshaping everything, I'm excited rather than worried
+                  – I see more opportunities to explore, which is why I'm
+                  seeking remote work to have more time for learning new
+                  technologies.
+                </p>
               </div>
             </div>
           </div>
@@ -289,4 +147,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default About;

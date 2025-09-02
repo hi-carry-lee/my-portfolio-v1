@@ -14,7 +14,7 @@ const Footer = () => {
           {/* 左侧：个人信息 */}
           <div className="text-center md:text-left">
             <h3 className="font-semibold text-lg text-green-600 dark:text-green-400">
-              Kerrin
+              Kerry Lee
             </h3>
             <p className="text-foreground/70 text-sm mt-1">
               Full Stack Developer
@@ -92,7 +92,7 @@ const Footer = () => {
         <div className="border-t border-border/10 mt-6 pt-6">
           {/* 底部版权信息 */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-foreground/60">
-            <p>© 2024 Kerrin. All rights reserved.</p>
+            <p>© 2024 Kerry Lee. All rights reserved.</p>
             <p>Built with Next.js & Tailwind CSS</p>
           </div>
         </div>

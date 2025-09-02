@@ -64,6 +64,9 @@ const MobileMenu = () => {
             <a href="#about" className={linkStyles} onClick={closeMenu}>
               About
             </a>
+            <a href="#skills" className={linkStyles} onClick={closeMenu}>
+              Skills
+            </a>
             <a href="#projects" className={linkStyles} onClick={closeMenu}>
               Projects
             </a>

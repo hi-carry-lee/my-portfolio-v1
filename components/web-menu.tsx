@@ -34,6 +34,9 @@ const WebMenu = () => {
         <a href="#about" className={linkStyles}>
           About
         </a>
+        <a href="#skills" className={linkStyles}>
+          Skills
+        </a>
         <a href="#projects" className={linkStyles}>
           Projects
         </a>

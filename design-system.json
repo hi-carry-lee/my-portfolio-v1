@@ -1,0 +1,186 @@
+{
+  "designSystem": {
+    "name": "Modern Minimalist Portfolio",
+    "version": "1.0",
+    "description": "简约现代的个人作品集设计风格"
+  },
+  "colorPalette": {
+    "primary": {
+      "background": "#FAFAFA",
+      "surface": "#FFFFFF",
+      "text": "#1A1A1A",
+      "accent": "#00B894",
+      "secondary": "#6C7B7F"
+    },
+    "interactive": {
+      "buttonPrimary": "#2D3436",
+      "buttonSecondary": "#00B894",
+      "hover": "#00A085"
+    },
+    "decorative": {
+      "orange": "#FF6B35",
+      "yellow": "#FDCB6E",
+      "blue": "#74B9FF",
+      "teal": "#00CEC9"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "primary": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+      "heading": "inherit"
+    },
+    "fontSize": {
+      "hero": "4rem",
+      "h1": "2.5rem",
+      "h2": "2rem",
+      "body": "1rem",
+      "small": "0.875rem"
+    },
+    "fontWeight": {
+      "light": 300,
+      "normal": 400,
+      "semibold": 600,
+      "bold": 700
+    },
+    "lineHeight": {
+      "tight": 1.2,
+      "normal": 1.5,
+      "relaxed": 1.6
+    }
+  },
+  "layout": {
+    "containerMaxWidth": "1200px",
+    "gridSystem": "CSS Grid / Flexbox",
+    "columns": 12,
+    "breakpoints": {
+      "mobile": "320px",
+      "tablet": "768px",
+      "desktop": "1024px",
+      "wide": "1200px"
+    },
+    "spacing": {
+      "xs": "0.5rem",
+      "sm": "1rem",
+      "md": "1.5rem",
+      "lg": "2rem",
+      "xl": "3rem",
+      "xxl": "4rem"
+    }
+  },
+  "components": {
+    "navigation": {
+      "style": "horizontal",
+      "position": "top-fixed",
+      "background": "transparent",
+      "items": ["Home", "About", "Projects", "Contact"],
+      "alignment": "space-between",
+      "padding": "1rem 2rem"
+    },
+    "hero": {
+      "layout": "split-screen",
+      "leftContent": "text-primary",
+      "rightContent": "decorative-graphics",
+      "greeting": {
+        "icon": "👋",
+        "text": "Hi All, I am",
+        "style": "casual"
+      },
+      "name": {
+        "fontSize": "hero",
+        "fontWeight": "bold",
+        "color": "primary"
+      },
+      "title": {
+        "text": "Full Stack Developer",
+        "badge": "FULLSTACK",
+        "badgeColor": "teal"
+      }
+    },
+    "skillTags": {
+      "style": "pill-shaped",
+      "backgroundColor": "#F8F9FA",
+      "textColor": "#2D3436",
+      "border": "1px solid #E9ECEF",
+      "padding": "0.5rem 1rem",
+      "borderRadius": "20px",
+      "skills": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Nest.js",
+        "Java",
+        "PostgreSQL",
+        "MySQL",
+        "Redis"
+      ]
+    },
+    "buttons": {
+      "primary": {
+        "backgroundColor": "#2D3436",
+        "color": "#FFFFFF",
+        "padding": "0.75rem 1.5rem",
+        "borderRadius": "8px",
+        "fontSize": "0.875rem"
+      },
+      "secondary": {
+        "backgroundColor": "transparent",
+        "color": "#2D3436",
+        "border": "1px solid #DDD",
+        "padding": "0.75rem 1.5rem",
+        "borderRadius": "8px"
+      }
+    },
+    "decorativeElements": {
+      "geometricShapes": true,
+      "illustrations": {
+        "character": "programmer-avatar",
+        "style": "flat-illustration",
+        "colors": ["#00CEC9", "#74B9FF", "#FDCB6E"]
+      },
+      "floatingElements": {
+        "circles": "various-sizes",
+        "positioning": "absolute",
+        "opacity": "0.1-0.3"
+      }
+    }
+  },
+  "animations": {
+    "hover": {
+      "buttons": "scale(1.05)",
+      "cards": "translateY(-2px)",
+      "duration": "0.2s"
+    },
+    "loading": {
+      "dots": "pulsing",
+      "deployment": "progress-indicator"
+    }
+  },
+  "spacing": {
+    "sectionPadding": "4rem 2rem",
+    "componentGap": "2rem",
+    "textLineHeight": "1.6"
+  },
+  "responsiveDesign": {
+    "mobile": {
+      "heroLayout": "stacked",
+      "fontSize": "scaled-down",
+      "padding": "reduced"
+    },
+    "tablet": {
+      "heroLayout": "adjusted-split",
+      "navigation": "hamburger-menu"
+    }
+  },
+  "accessibility": {
+    "contrast": "AAA-compliant",
+    "focusStates": "visible-outline",
+    "semanticHTML": "proper-headings"
+  },
+  "designPrinciples": {
+    "style": "minimalist",
+    "approach": "content-first",
+    "aesthetics": "clean-modern",
+    "userExperience": "intuitive-navigation",
+    "visualHierarchy": "clear-typography-scale"
+  }
+}

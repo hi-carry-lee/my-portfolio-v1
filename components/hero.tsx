@@ -60,16 +60,7 @@ const Hero = () => {
 
             {/* 技能标签 */}
             <div className="flex flex-wrap gap-2">
-              {[
-                "React",
-                "Next.js",
-                "TypeScript",
-                "Nest.js",
-                "Java",
-                "PostgreSQL",
-                "MySQL",
-                "Redis",
-              ].map((skill, index) => (
+              {["TS Fullstack", "Java"].map((skill, index) => (
                 <span
                   key={skill}
                   className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm font-medium border transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-105"
@@ -84,11 +75,11 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="group">
                 <Mail className="mr-2 h-4 w-4 group-hover:animate-bounce" />
-                联系我
+                Contact Me
               </Button>
               <Button variant="outline" size="lg" className="group">
                 <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" />
-                下载简历
+                Download Resume
               </Button>
             </div>
 

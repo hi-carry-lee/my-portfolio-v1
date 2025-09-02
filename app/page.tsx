@@ -1,7 +1,8 @@
 import Header from "@/components/header";
-import AboutSection from "@/components/about";
-import ProjectsSection from "@/components/projects";
-import ContactSection from "@/components/contacts";
+import About from "@/components/about";
+import Projects from "@/components/projects";
+import Contact from "@/components/contacts";
+import Skills from "@/components/skills";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 
@@ -10,12 +11,11 @@ export default function Home() {
     <div>
       <Header />
       <main>
-        <div className="h-screen">
-          <Hero />
-        </div>
-        <AboutSection />
-        <ProjectsSection />
-        <ContactSection />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
       </main>
       <Footer />
     </div>
