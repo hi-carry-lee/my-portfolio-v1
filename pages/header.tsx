@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import MobileMenu from "./mobile-menu";
-import WebMenu from "./web-menu";
+import MobileMenu from "../components/mobile-menu";
+import WebMenu from "../components/web-menu";
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
