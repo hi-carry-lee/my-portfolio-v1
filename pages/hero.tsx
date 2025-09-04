@@ -146,7 +146,7 @@ const Hero = () => {
           }`}
         >
           <div className="flex flex-col items-center gap-2 text-muted-foreground">
-            <span className="text-sm">向下滚动</span>
+            <span className="text-sm">Scroll down</span>
             <ArrowDown className="h-5 w-5 animate-bounce" />
           </div>
         </div>

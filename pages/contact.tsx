@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { Button } from "@/components/ui/button";
+import { Linkedin, Github } from "lucide-react";
 
 const Contact = () => {
   const [currentTime, setCurrentTime] = useState<string>("");
@@ -117,8 +118,8 @@ const Contact = () => {
 
             {/* Current Time */}
             <div className="text-center mb-6">
-              <div className="text-sm text-slate-500 dark:text-slate-400 mb-2">
-                Current Time (GMT+8)
+              <div className="text-md text-slate-500 dark:text-slate-400 mb-2 inline-flex items-center gap-2">
+                Current Time (GMT+8){" "}
               </div>
               <div className="text-2xl font-mono font-semibold text-blue-600 dark:text-blue-300">
                 {currentTime}
@@ -132,10 +133,14 @@ const Contact = () => {
                 <span>04:00 - 24:00</span>
               </div>
               <div className="relative h-2 bg-slate-200 dark:bg-slate-700 rounded">
+                {/* 00:00 标记线 */}
                 <div className="absolute left-0 top-0 h-full w-0.5 bg-slate-400 dark:bg-slate-500"></div>
+                {/* 04:00 标记线 (1/6 位置) */}
                 <div className="absolute left-1/6 top-0 h-full w-0.5 bg-green-500 dark:bg-green-400"></div>
+                {/* 24:00 标记线 */}
                 <div className="absolute right-0 top-0 h-full w-0.5 bg-slate-400 dark:bg-slate-500"></div>
-                <div className="absolute left-1/6 top-0 h-full w-1/3 bg-green-500/30 dark:bg-green-400/30 rounded"></div>
+                {/* 可工作时间段：从 04:00 到 24:00 (5/6 的宽度) */}
+                <div className="absolute left-1/6 top-0 h-full w-5/6 bg-green-500/30 dark:bg-green-400/30 rounded"></div>
               </div>
               <div className="flex justify-between text-xs text-slate-400 dark:text-slate-500 mt-1">
                 <span>00:00</span>
@@ -145,33 +150,12 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Language Skills */}
-            <div className="text-center mb-6">
-              <div className="text-sm text-slate-500 dark:text-slate-400 mb-2">
-                Languages
-              </div>
-              <div className="flex justify-center space-x-6">
-                <div className="flex items-center">
-                  <span className="text-xl mr-2">🇨🇳</span>
-                  <span className="text-sm text-slate-700 dark:text-white">
-                    Native
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-xl mr-2">🇺🇸</span>
-                  <span className="text-sm text-slate-700 dark:text-white">
-                    Professional
-                  </span>
-                </div>
-              </div>
-            </div>
-
             {/* Timezone Compatibility */}
             <div>
               <h4 className="text-base font-semibold mb-3 text-center text-slate-800 dark:text-white">
                 Timezone Compatibility
               </h4>
-              <div className="space-y-2">
+              <div className="space-y-4">
                 <div className="bg-blue-50 dark:bg-blue-500/5 border border-blue-200 dark:border-blue-500/20 p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-500/10 hover:-translate-y-0.5 transition-all duration-300">
                   <div className="flex justify-between items-center">
                     <div>
@@ -230,7 +214,7 @@ const Contact = () => {
             </h3>
 
             {/* Primary Email CTA */}
-            <div className="text-center mb-6">
+            <div className="text-center mb-2">
               <Button
                 onClick={copyEmail}
                 className="w-full py-3 px-5 rounded-xl text-white font-semibold text-base bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/40 transition-all duration-300 relative overflow-hidden group"
@@ -245,9 +229,34 @@ const Contact = () => {
               </p>
             </div>
 
+            {/* Social Links */}
+            <div className="text-center">
+              <p className="text-slate-500 dark:text-slate-400 mb-4 text-sm">
+                Or connect with me on:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <a
+                  href="#"
+                  className="bg-slate-100 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-600/30 p-3 rounded-lg text-center hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-300 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="text-xl mb-1 flex items-center justify-center">
+                    <Linkedin />
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  className="bg-slate-100 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-600/30 p-3 rounded-lg text-center hover:border-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="text-xl mb-1 flex items-center justify-center">
+                    <Github size={26} />
+                  </div>{" "}
+                </a>
+              </div>
+            </div>
+
             {/* Contact Preferences */}
-            <div className="space-y-3 mb-6">
-              <div className="flex items-center justify-between p-3 bg-slate-100 dark:bg-slate-700/50 rounded-lg">
+            <div className="space-y-3 mt-4">
+              <div className="flex items-center justify-between p-2 bg-slate-100 dark:bg-slate-700/50 rounded-lg">
                 <div className="flex items-center">
                   <span className="text-xl mr-3">⚡</span>
                   <span className="text-slate-700 dark:text-white">
@@ -259,7 +268,7 @@ const Contact = () => {
                 </span>
               </div>
 
-              <div className="flex items-center justify-between p-3 bg-slate-100 dark:bg-slate-700/50 rounded-lg">
+              <div className="flex items-center justify-between p-2 bg-slate-100 dark:bg-slate-700/50 rounded-lg">
                 <div className="flex items-center">
                   <span className="text-xl mr-3">💼</span>
                   <span className="text-slate-700 dark:text-white">
@@ -271,7 +280,7 @@ const Contact = () => {
                 </span>
               </div>
 
-              <div className="flex items-center justify-between p-3 bg-slate-100 dark:bg-slate-700/50 rounded-lg">
+              <div className="flex items-center justify-between p-2 bg-slate-100 dark:bg-slate-700/50 rounded-lg">
                 <div className="flex items-center">
                   <span className="text-xl mr-3">🌍</span>
                   <span className="text-slate-700 dark:text-white">
@@ -284,39 +293,41 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="text-center">
-              <p className="text-slate-500 dark:text-slate-400 mb-4 text-sm">
-                Or connect with me on:
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <a
-                  href="#"
-                  className="bg-slate-100 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-600/30 p-3 rounded-lg text-center hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-300 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="text-xl mb-1">💼</div>
-                  <div className="text-xs font-medium text-slate-700 dark:text-white">
-                    LinkedIn
+            {/* Language Skills */}
+            <div className="text-center mt-4">
+              <div className="text-sm text-slate-500 dark:text-slate-400 mb-3">
+                Language Proficiency
+              </div>
+              <div className="space-y-3">
+                {/* 英语 - 工作语言 */}
+                <div className="bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 p-3 rounded-lg">
+                  <div className="flex items-center justify-center">
+                    <span className="text-2xl mr-3">🇺🇸</span>
+                    <div className="text-center">
+                      <div className="font-semibold text-blue-700 dark:text-blue-300 text-sm">
+                        English
+                      </div>
+                      <div className="text-xs text-blue-600 dark:text-blue-400">
+                        Professional Working Language
+                      </div>
+                    </div>
                   </div>
-                </a>
-                <a
-                  href="#"
-                  className="bg-slate-100 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-600/30 p-3 rounded-lg text-center hover:border-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="text-xl mb-1">📱</div>
-                  <div className="text-xs font-medium text-slate-700 dark:text-white">
-                    GitHub
+                </div>
+
+                {/* 中文 - 母语 */}
+                <div className="bg-slate-50 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-600/30 p-3 rounded-lg">
+                  <div className="flex items-center justify-center">
+                    <span className="text-2xl mr-3">🇨🇳</span>
+                    <div className="text-center">
+                      <div className="font-semibold text-slate-700 dark:text-white text-sm">
+                        Chinese
+                      </div>
+                      <div className="text-xs text-slate-500 dark:text-slate-400">
+                        Native Language
+                      </div>
+                    </div>
                   </div>
-                </a>
-                <a
-                  href="#"
-                  className="bg-slate-100 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-600/30 p-3 rounded-lg text-center hover:border-green-400 hover:text-green-600 dark:hover:text-green-300 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="text-xl mb-1">💬</div>
-                  <div className="text-xs font-medium text-slate-700 dark:text-white">
-                    WeChat
-                  </div>
-                </a>
+                </div>
               </div>
             </div>
           </div>
