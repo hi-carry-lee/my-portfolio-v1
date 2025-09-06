@@ -10,10 +10,23 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: "Kerrin's Portfolio",
-    default: "Kerrin's Portfolio",
+    template: "%s | Kerry's Portfolio",
+    default: "Kerry's Portfolio - Full-Stack Developer",
   },
-  description: "Kerrin's Portfolio",
+  description:
+    "Remote Full-Stack Developer specializing in Next.js, React, Java backend, and modern web development. Available for your next project worldwide.",
+  // 社交分享优化 - 核心功能
+  openGraph: {
+    title: "Kerry's Portfolio - Full-Stack Developer",
+    description:
+      "Remote Full-Stack Developer specializing in Next.js, React, Java backend, and modern web development.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kerry's Portfolio - Full-Stack Developer",
+    description:
+      "Remote Full-Stack Developer specializing in Next.js, React, Java backend, and modern web development.",
+  },
 };
 
 export default function RootLayout({
