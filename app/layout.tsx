@@ -43,6 +43,7 @@ export default function RootLayout({
           attribute="class" // 使用 class 切换主题
           defaultTheme="dark" // 默认主题
           enableSystem={true} // 跟随系统主题
+          disableTransitionOnChange
         >
           {children}
           <Toaster

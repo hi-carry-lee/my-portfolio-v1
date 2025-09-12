@@ -71,13 +71,21 @@ const Contact = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // 邮箱地址 - 简单混淆
+  const getEmail = () => {
+    // 简单的混淆，防止基础爬虫
+    const parts = ["test-demo", "gmail", "com"];
+    return `${parts[0]}@${parts[1]}.${parts[2]}`;
+  };
+
   // Copy email to clipboard
   const copyEmail = async () => {
     try {
-      await navigator.clipboard.writeText("carry.zhang.dev@gmail.com");
+      const email = getEmail();
+      await navigator.clipboard.writeText(email);
       toast.success("Email copied to clipboard!");
     } catch (err) {
-      toast.error("Failed to copy email");
+      toast.error(`Failed to copy email automatically. Email: ${getEmail()}`);
     }
   };
 
@@ -219,9 +227,7 @@ const Contact = () => {
                 onClick={copyEmail}
                 className="w-full py-3 px-5 rounded-xl text-white font-semibold text-base bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/40 transition-all duration-300 relative overflow-hidden group"
               >
-                <span className="relative z-10">
-                  📧 carry.zhang.dev@gmail.com
-                </span>
+                <span className="relative z-10">📧 {getEmail()}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
               </Button>
               <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
