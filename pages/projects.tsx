@@ -35,12 +35,33 @@ const Projects = () => {
 
   const projects: Project[] = [
     {
+      title: "AI Blog Platform",
+      description:
+        "A modern blog platform powered by AI. Features AI-generated summaries, cover images, and vector-based semantic search for better content discovery.",
+      icon: "✨",
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "OpenAI",
+        "Pinecone",
+        "NextAuth",
+        "ShadcnUI",
+        "TailWind CSS",
+        "Vercel",
+      ],
+      status: "Live",
+      liveUrl: "https://your-blog-platform.vercel.app",
+      githubUrl: "https://github.com/hi-carry-lee/blog-v1",
+    },
+    {
       title: "Family Schedule Planner",
       description: "An AI powered schedule planner for the family.",
       icon: "📅",
       tech: [
-        "Nextjs",
-        "Nestjs",
+        "Next.js",
+        "Nest.js",
         "PostgreSQL",
         "TypeScript",
         "ShadcnUI",
@@ -58,8 +79,8 @@ const Projects = () => {
         "An AI powered English assistant that can help you learn English.",
       icon: "📋",
       tech: [
-        "Nextjs",
-        "Nestjs",
+        "Next.js",
+        "Nest.js",
         "PostgreSQL",
         "TypeScript",
         "OpenAI",
@@ -177,14 +198,53 @@ const Projects = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3">
-                    <Button size="sm" className="group/btn">
-                      <ExternalLink className="mr-2 h-4 w-4 group-hover/btn:rotate-45 transition-transform" />
-                      Live Demo
-                    </Button>
-                    <Button variant="outline" size="sm" className="group/btn">
-                      <Github className="mr-2 h-4 w-4 group-hover/btn:rotate-12 transition-transform" />
-                      GitHub
-                    </Button>
+                    {project.status !== "Coming Soon" &&
+                    project.liveUrl !== "#" ? (
+                      <Button size="sm" className="group/btn" asChild>
+                        <Link
+                          href={project.liveUrl || ""}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="mr-2 h-4 w-4 group-hover/btn:rotate-45 transition-transform" />
+                          Live Demo
+                        </Link>
+                      </Button>
+                    ) : (
+                      <Button size="sm" disabled className="group/btn">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Live Demo
+                      </Button>
+                    )}
+
+                    {project.status !== "Coming Soon" &&
+                    project.githubUrl !== "#" ? (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="group/btn"
+                        asChild
+                      >
+                        <Link
+                          href={project.githubUrl || ""}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github className="mr-2 h-4 w-4 group-hover/btn:rotate-12 transition-transform" />
+                          GitHub
+                        </Link>
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        disabled
+                        className="group/btn"
+                      >
+                        <Github className="mr-2 h-4 w-4" />
+                        GitHub
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
