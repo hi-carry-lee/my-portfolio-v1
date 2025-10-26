@@ -107,7 +107,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="min-h-screen py-6 px-4">
+    <section id="projects" className="py-12 md:py-16 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-8">

@@ -1,5 +1,6 @@
 "use client";
-import { Github, Twitter, ArrowUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -14,68 +15,26 @@ const Footer = () => {
           {/* 左侧：个人信息 */}
           <div className="text-center md:text-left">
             <h3 className="font-semibold text-lg text-green-600 dark:text-green-400">
-              Kerry Lee
+              Kai Li
             </h3>
             <p className="text-foreground/70 text-sm mt-1">
               Full Stack Developer
             </p>
           </div>
 
-          {/* 中间：社交媒体链接 */}
-          <div className="flex items-center gap-4">
-            <a
-              href="https://github.com/hi-carry-lee"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                p-2 
-                text-foreground/70 
-                hover:text-green-600 
-                dark:hover:text-green-400
-                hover:bg-green-50/80 
-                dark:hover:bg-green-950/40
-                rounded-lg 
-                transition-all 
-                duration-300
-                hover:scale-110
-              "
-              aria-label="GitHub"
-            >
-              <Github size={26} />
-            </a>
-
-            <a
-              href="https://x.com/carrylee822"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                p-2 
-                text-foreground/70 
-                hover:text-green-600 
-                dark:hover:text-green-400
-                hover:bg-green-50/80 
-                dark:hover:bg-green-950/40
-                rounded-lg 
-                transition-all 
-                duration-300
-                hover:scale-110
-              "
-              aria-label="Twitter"
-            >
-              <Twitter size={28} />
-            </a>
-          </div>
-
           {/* 右侧：回到顶部按钮 */}
-          <button
+          <Button
             onClick={scrollToTop}
+            variant="outline"
             className="
-              p-2 
+              p-3 
               text-foreground/70 
               hover:text-green-600 
               dark:hover:text-green-400
               hover:bg-green-50/80 
               dark:hover:bg-green-950/40
+              border-border
+              hover:border-green-400
               rounded-lg 
               transition-all 
               duration-300
@@ -85,14 +44,14 @@ const Footer = () => {
             aria-label="Back to top"
           >
             <ArrowUp size={20} />
-          </button>
+          </Button>
         </div>
 
         {/* 分割线 */}
         <div className="border-t border-border/10 mt-6 pt-6">
           {/* 底部版权信息 */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-foreground/60">
-            <p>© 2024 Kerry Lee. All rights reserved.</p>
+            <p>© 2025 Kai Li. All rights reserved.</p>
             <p>Built with Next.js & Tailwind CSS</p>
           </div>
         </div>

@@ -81,7 +81,7 @@ const Skills = () => {
   ];
 
   return (
-    <div id="skills" className="min-h-screen py-24">
+    <div id="skills" className="min-h-screen py-24 ">
       {/* 背景装饰 */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-40 left-20 w-64 h-64 bg-chart-1/10 rounded-full blur-3xl animate-pulse" />
