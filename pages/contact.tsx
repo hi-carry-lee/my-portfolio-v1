@@ -52,10 +52,11 @@ const Contact = () => {
         }`}
       >
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent">
-          Let's Get In Touch
+          Let&apos;s Get In Touch
         </h2>
         <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg">
-          I'm currently seeking remote opportunities as a Full Stack Developer.
+          I&apos;m currently seeking remote opportunities as a Full Stack
+          Developer.
         </p>
       </div>
 
