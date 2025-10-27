@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Layers, Code2, Users } from "lucide-react";
 
-export default function AboutMe() {
+export default function AboutMe({ years }: { years: number }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -163,7 +163,7 @@ export default function AboutMe() {
           <p className="text-lg text-card-foreground/70 leading-relaxed">
             Full stack developer with{" "}
             <span className="font-medium text-card-foreground">
-              3+ years of experience
+              {years}+ years of experience
             </span>{" "}
             in Java and modern web technologies. I enjoy solving complex
             problems and building products that users love.

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FaNode, FaReact } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 
-export default function Hero() {
+export default function Hero({ years }: { years: number }) {
   return (
     <section className="min-h-[85vh] flex items-center relative overflow-hidden mb-4">
       {/* 背景装饰 */}
@@ -46,7 +46,9 @@ export default function Hero() {
             {/* 关键数据（可选，如果有的话） */}
             <div className="flex gap-8 pt-4">
               <div>
-                <div className="text-3xl font-bold text-foreground">3+</div>
+                <div className="text-3xl font-bold text-foreground">
+                  {years}+
+                </div>
                 <div className="text-sm text-foreground/60">
                   Years Experience
                 </div>
