@@ -34,12 +34,12 @@ const MobileMenu = () => {
   };
 
   return (
-    <header className="flex justify-between items-center p-4 border-b border-border/20 bg-background/80 backdrop-blur-sm sticky top-0 z-50">
+    <header className="flex justify-between items-center p-4 border-b border-border/20 bg-background/80  sticky top-0 z-50">
       <Link
         href="/"
         className="font-bold text-2xl text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors duration-200"
       >
-        Kerry
+        Kai Li
       </Link>
 
       <div className="flex items-center gap-2">
@@ -56,8 +56,8 @@ const MobileMenu = () => {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 top-16 bg-background/95 backdrop-blur-sm z-40">
-          <nav className="flex flex-col items-end justify-center min-h-full p-6 space-y-6">
+        <div className="fixed inset-0 top-16 bg-background/95  z-40">
+          <nav className="flex flex-col items-end justify-start min-h-full p-6 space-y-6">
             <a href="#home" className={linkStyles} onClick={closeMenu}>
               Home
             </a>
